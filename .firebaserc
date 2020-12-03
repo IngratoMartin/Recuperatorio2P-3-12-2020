@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "recuperatorio-a4484": {
+      "hosting": {
+        "recuperatorio": [
+          "recuperatorio-a4484"
+        ]
+      }
+    }
+  }
+}

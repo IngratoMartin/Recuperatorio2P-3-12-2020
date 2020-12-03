@@ -1,0 +1,31 @@
+<form class="miform">
+    <mat-form-field class="micampo">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput [formControl]="emailFormControl" placeholder="Ej. mimail@mail.com">
+        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+          Ingrese un email valido
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          El email es <strong>requerido</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="micampo">
+        <mat-label>Clave</mat-label>
+        <input type="password" matInput [formControl]="claveFormControl">
+        <mat-error *ngIf="claveFormControl.hasError('minlength') && !claveFormControl.hasError('required')">
+          La clave debe tener mas de 6 caracteres
+        </mat-error>
+        <mat-error *ngIf="claveFormControl.hasError('maxlength') && !claveFormControl.hasError('required')">
+            La clave debe tener menos de 10 caracteres
+          </mat-error>
+        <mat-error *ngIf="claveFormControl.hasError('required')">
+          La clave es <strong>requerida</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <br>
+      <br>
+      
+    <button mat-raised-button color="primary" (click)="Registro()">Enviar</button>
+</form>

@@ -1,0 +1,35 @@
+<form class="miform">
+    <mat-form-field class="micampo">
+        <mat-label>Modelo</mat-label>
+        <input type="text" matInput [formControl]="modeloFormControl" placeholder="Ej: Ford Fiesta">
+      </mat-form-field>
+
+
+      <mat-form-field class="micampo">
+        <mat-label>año</mat-label>
+        <input type="text" matInput [formControl]="anoFormControl">
+        <mat-error *ngIf="anoFormControl.hasError('minlength') && !anoFormControl.hasError('required')">
+          El año debe ser de 4 numeros
+        </mat-error>
+        <mat-error *ngIf="anoFormControl.hasError('maxlength') && !anoFormControl.hasError('required')">
+            El año debe ser de 4 numeros
+          </mat-error>
+        <mat-error *ngIf="anoFormControl.hasError('required')">
+          El año es <strong>requerido</strong>
+        </mat-error>
+      </mat-form-field>
+
+
+      <mat-form-field class="micampo">
+        <mat-label>Precio</mat-label>
+        <input type="text" matInput [formControl]="precioFormControl" placeholder="Ingrese su precio">
+      </mat-form-field>
+      <mat-error *ngIf="precioFormControl.hasError('required')">
+        El precio es <strong>requerido</strong>
+      </mat-error>
+
+      <br>
+      <br>
+
+    <button mat-raised-button color="primary" (click)="Publicar()">Enviar</button>
+</form>

@@ -1,0 +1,11 @@
+<p *ngFor="let auto of autos">
+    Modelo: {{auto.modelo}}
+    <br>
+    Año: {{auto.ano}}
+    <br>
+    Precio: {{auto.precio}}
+    <br>
+    <button mat-raised-button color="primary" (click)="Modificar(auto.customIdName)">Modificar</button><button mat-raised-button color="warn" (click)="Eliminar(auto.customIdName)">Eliminar</button>
+    <mat-divider></mat-divider>
+</p>
+
